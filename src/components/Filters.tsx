@@ -4,9 +4,11 @@ import { Dispatch, SetStateAction, useCallback } from "react";
 
 interface FiltersProps {
   groupList: Group[] | undefined;
-  filters: { privacy: string, color: string, friends: string };
-  setFilters: Dispatch<SetStateAction<{ privacy: string; color: string; friends: string; }>>;
-} 
+  filters: { privacy: string; color: string; friends: string };
+  setFilters: Dispatch<
+    SetStateAction<{ privacy: string; color: string; friends: string }>
+  >;
+}
 
 export function Filters({ groupList, filters, setFilters }: FiltersProps) {
   const getAvatarColors = useCallback(() => {
@@ -33,7 +35,7 @@ export function Filters({ groupList, filters, setFilters }: FiltersProps) {
             <CustomSelectOption {...restProps} />
           )}
           value={filters.privacy}
-          onChange={(e) => setFilters({...filters, privacy: e.target.value})}
+          onChange={(e) => setFilters({ ...filters, privacy: e.target.value })}
         />
       </FormItem>
       <FormItem top="Цвет аватарки">
@@ -47,7 +49,7 @@ export function Filters({ groupList, filters, setFilters }: FiltersProps) {
             <CustomSelectOption {...restProps} />
           )}
           value={filters.color}
-          onChange={(e) => setFilters({...filters, color: e.target.value})}
+          onChange={(e) => setFilters({ ...filters, color: e.target.value })}
         />
       </FormItem>
       <FormItem top="Наличие друзей в группе">
@@ -61,7 +63,7 @@ export function Filters({ groupList, filters, setFilters }: FiltersProps) {
             <CustomSelectOption {...restProps} />
           )}
           value={filters.friends}
-          onChange={(e) => setFilters({...filters, friends: e.target.value})}
+          onChange={(e) => setFilters({ ...filters, friends: e.target.value })}
         />
       </FormItem>
     </Div>
