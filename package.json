@@ -1,5 +1,6 @@
 {
   "name": "vktest",
+  "homepage": "https://nikarzj.github.io/vkTestTask",
   "private": true,
   "version": "0.0.0",
   "type": "module",
